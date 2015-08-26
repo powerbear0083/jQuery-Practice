@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+<meta charset="UTF-8">
+<title>simple slidershow</title>
+</head>
+<style type="text/css">
+.slider__box{
+	position: relative;
+	width: 800px;
+	height: 300px;
+	z-index: 1;
+}
+.slider__box img{
+	position: absolute;
+	z-index: 8;
+	top: 0;
+	left: 0;
+}
+.slider__box .active{
+	z-index: 10;
+}
+.slider__box .last-active{
+	z-index: 9;
+}
+</style>
+<body>
+<div id="sliderShow" class="slider__box">
+	<img class="active" src="images/1.jpg" height="300" width="800" alt="1">
+	<img src="images/2.jpg" height="300" width="800" alt="2">
+	<img src="images/3.jpg" height="300" width="800" alt="3">simpleSlider.js
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/simpleSlider.js"></script>
+</script>
+</body>
+
+</html>
