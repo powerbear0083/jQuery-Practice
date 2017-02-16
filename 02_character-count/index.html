@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+<meta charset="UTF-8">
+<title>Character Count</title>
+</head>
+<style type="text/css">
+.wrap {
+    position: relative;
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+.wrap textarea{
+	width: 80%;
+	margin: auto
+}
+.count-words{
+    background-color: rgba(255, 70, 70, 0.8);
+    position: absolute;
+    padding: 5px;
+    color: #fff;
+    right: 16px;
+    bottom: 45px;
+}
+</style>
+<body>
+<div class="wrap">
+	<div id="countWord" class="count-words">剩餘字數：3字</div>
+	<textarea id="textBox" class="input-100" maxlength="15"></textarea>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/simpleSlider.js"></script>
+<script type="text/javascript">
+$(function () {
+	function characterCount(){
+		var $countWord = $('#countWord'),
+			$textBox = $('#textBox'),
+			_countLength = 15,
+			_countWordFirst = '剩餘字數：',
+			_countWordLast = '字',
+			_countWord = _countWordFirst + _countLength + _countWordLast;
+
+		$countWord.html(_countWord);
+		$textBox.on('keyup', function(){
+			var $this = $(this),
+				_textLength = $this.val().length,
+				_textRemaining = _countLength - _textLength;
+			$countWord.html(_countWordFirst + _textRemaining + _countWordLast);
+			
+		});
+	}
+	characterCount();
+});
+</script>
+</body>
+
+</html>
